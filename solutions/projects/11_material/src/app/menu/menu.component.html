@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <a mat-button [routerLink]="['/']">
+    <img src="assets/logo.webp" height="24" width="24" alt="logo" title="Logo du site" class="app-menu-logo" />
+
+    Zenika Ecommerce
+  </a>
+
+  <span class="app-menu-spacer"></span>
+
+  <a
+    *ngIf="numberOfItems$ | async as numberOfItems"
+    mat-raised-button
+    [matBadge]="numberOfItems"
+    matBadgeColor="accent"
+    [routerLink]="['/basket']"
+  >
+    Voir mon panier
+  </a>
+</mat-toolbar>

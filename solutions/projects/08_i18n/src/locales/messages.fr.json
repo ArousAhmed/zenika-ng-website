@@ -1,0 +1,33 @@
+{
+  "locale": "fr",
+  "translations": {
+    "Action.AddToBasket": "Ajoutez au panier",
+    "Action.GotoBasket": "Voir mon panier",
+    "Action.Validate": "Valider",
+    "Basket.Amount": "Votre panier s'élève à {$INTERPOLATION}",
+    "Basket.Empty": "Votre panier est vide",
+    "Basket.Empty.Text": "Votre panier est vide.{$LINE_BREAK} En manque d'inspiration ?",
+    "Basket.Items": "{VAR_PLURAL, plural, =1 {article} other {articles}}",
+    "Basket.MyBasket": "Mon panier",
+    "Basket.Payment": "Paiement",
+    "Catalog.Empty": "Désolé, notre stock est vide !",
+    "Catalog.Title": "Catalogue",
+    "FormError.CreditCard": "Le numéro doit être valide (ex. 123-456)",
+    "FormError.Required": "Champ obligatoire",
+    "FormField.Address": "Adresse",
+    "FormField.CreditCard": "Numéro de carte de crédit",
+    "FormField.Name": "Nom",
+    "Logo.ImageTitle": "Logo du site",
+    "Page.NotFound": "Désolé, la page que vous recherchez est introuvable.",
+    "ProductDetails.Title": "Détails du produit",
+    "ProductDetails.Description": "Description",
+    "ProductDetails.Stock": "Stock disponible",
+    "ProductDetails.Price": "Prix",
+    "Response.ErrorOccured": "😱 Désolé, une erreur s'est produite.",
+    "Response.OrderConfirmed": "🚀 Merci pour votre commande (réf. {$orderNumber}).",
+    "Response.UnableToAccessBasket": "😖 Désolé, impossible d'accéder au panier.",
+    "Response.UnableToAccessCatalog": "😲 Désolé, impossible d'accéder au catalogue.",
+    "Response.UnableToFindProduct": "😳 Désolé, ce produit est introuvable.",
+    "Welcome": "Bienvenue sur Zenika Ecommerce"
+  }
+}

@@ -1,0 +1,42 @@
+// ---- Bootstrap (only for variables and mixins) ----
+
+@use './bootstrap-configuration.scss' as bs;
+
+// ---- Material ----
+
+// Copy/paste code from:
+//  - https://material.angular.io/guide/theming
+//  - https://material.angular.io/guide/typography
+
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$my-primary: mat.define-palette(mat.$blue-palette, 600);
+$my-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
+
+// Note that we replace the default Material font-family (which is `Roboto`) to match the Bootstrap font-family.
+$my-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-primary,
+      accent: $my-accent,
+    ),
+    typography:
+      mat.define-typography-config(
+        $font-family: bs.$font-family-base,
+      ),
+    density: 0,
+  )
+);
+
+// Option 1. Include all components
+// @include mat.all-component-themes($my-theme);
+
+// Option 2. Include only the components that you are using in this demo
+@include mat.core-theme($my-theme);
+
+@include mat.badge-theme($my-theme);
+@include mat.button-theme($my-theme);
+@include mat.form-field-theme($my-theme);
+@include mat.toolbar-theme($my-theme);

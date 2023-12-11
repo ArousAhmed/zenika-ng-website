@@ -1,0 +1,39 @@
+<form class="card-body" [formGroup]="formGroup" (ngSubmit)="checkout()">
+  <mat-form-field class="mb-2 w-100">
+    <mat-label>Nom</mat-label>
+
+    <input matInput [formControl]="formGroup.controls.name" />
+
+    <mat-error *ngIf="formGroup.controls.name.hasError('required')">Champ obligatoire</mat-error>
+  </mat-form-field>
+
+  <br />
+
+  <mat-form-field class="mb-2 w-100">
+    <mat-label>Adresse</mat-label>
+
+    <textarea matInput [formControl]="formGroup.controls.address"></textarea>
+
+    <mat-error *ngIf="formGroup.controls.address.hasError('required')">Champ obligatoire</mat-error>
+  </mat-form-field>
+
+  <br />
+
+  <mat-form-field class="mb-2 w-100">
+    <mat-label>Numéro de carte de crédit</mat-label>
+
+    <input matInput [formControl]="formGroup.controls.creditCard" />
+
+    <mat-error *ngIf="formGroup.controls.creditCard.hasError('required')">Champ obligatoire</mat-error>
+
+    <mat-error *ngIf="formGroup.controls.creditCard.hasError('pattern')">
+      Le numéro doit être valide (ex. 123-456)
+    </mat-error>
+  </mat-form-field>
+
+  <br />
+
+  <button mat-raised-button color="primary" [disabled]="formGroup.invalid || formGroup.disabled" type="submit">
+    Valider
+  </button>
+</form>

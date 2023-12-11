@@ -1,0 +1,31 @@
+<h2 class="h4">Mon panier</h2>
+
+@if (items$ | async; as items) {
+  <div class="card">
+    @if (numberOfItems$ | async; as numberOfItems) {
+      <div class="card-header">{{ numberOfItems }} {{ numberOfItems === 1 ? 'article' : 'articles' }}</div>
+    }
+
+    <ul class="list-group list-group-flush">
+      @for (item of items; track item.id) {
+        <li class="list-group-item d-flex justify-content-between">
+          {{ item.title }} <span class="text-primary">{{ item.price | currency: 'EUR' }}</span>
+        </li>
+      } @empty {
+        <li class="list-group-item text-secondary">Votre panier est vide</li>
+      }
+
+      @if (items.length) {
+        <li class="list-group-item d-flex justify-content-between fw-bold">
+          Total <span class="text-primary">{{ total$ | async | currency: 'EUR' }}</span>
+        </li>
+      }
+    </ul>
+  </div>
+}
+
+<div class="card mt-3">
+  <div class="card-header">Paiement</div>
+
+  <app-basket-form />
+</div>

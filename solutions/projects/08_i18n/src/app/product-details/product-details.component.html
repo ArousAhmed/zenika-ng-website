@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-12 col-md-4">
+    <img [src]="product.photo" class="mb-3 mb-md-0 w-100 rounded-3" alt="Product image" />
+  </div>
+
+  <div class="col-12 col-md-8">
+    <h1>{{ product.title }}</h1>
+
+    <div class="table-responsive-sm">
+      <table class="table caption-top">
+        <caption i18n="@@ProductDetails.Title">
+          Détails du produit
+        </caption>
+
+        <tbody>
+          <tr>
+            <th scope="row" i18n="@@ProductDetails.Description">Description</th>
+            <td style="min-width: 280px">{{ product.description }}</td>
+          </tr>
+
+          <tr>
+            <th scope="row" i18n="@@ProductDetails.Stock">Stock disponible</th>
+            <td>{{ product.stock }}</td>
+          </tr>
+
+          <tr>
+            <th scope="row" i18n="@@ProductDetails.Price">Prix</th>
+            <td>{{ product.price | currency: 'EUR' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

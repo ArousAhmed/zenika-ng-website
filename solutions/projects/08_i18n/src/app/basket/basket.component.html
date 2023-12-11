@@ -1,0 +1,28 @@
+<h2 class="h4" i18n="@@Basket.MyBasket">Mon panier</h2>
+
+<div class="card" *ngIf="items$ | async as items">
+  <div class="card-header" *ngIf="numberOfItems$ | async as numberOfItems">
+    {{ numberOfItems }}
+    <ng-container i18n="@@Basket.Items">{numberOfItems, plural, =1 {article} other {articles}}</ng-container>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item d-flex justify-content-between" *ngFor="let item of items">
+      {{ item.title }} <span class="text-primary">{{ item.price | currency : 'EUR' }}</span>
+    </li>
+
+    <li class="list-group-item d-flex justify-content-between fw-bold" *ngIf="items.length; else basketEmpty">
+      Total <span class="text-primary">{{ total$ | async | currency : 'EUR' }}</span>
+    </li>
+
+    <ng-template #basketEmpty>
+      <li class="list-group-item text-secondary" i18n="@@Basket.Empty">Votre panier est vide</li>
+    </ng-template>
+  </ul>
+</div>
+
+<div class="card mt-3">
+  <div class="card-header" i18n="@@Basket.Payment">Paiement</div>
+
+  <app-basket-form />
+</div>

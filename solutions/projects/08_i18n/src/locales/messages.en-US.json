@@ -1,0 +1,33 @@
+{
+  "locale": "en-US",
+  "translations": {
+    "Action.AddToBasket": "Add to basket",
+    "Action.GotoBasket": "View basket",
+    "Action.Validate": "Validate",
+    "Basket.Amount": "The basket amount is {$INTERPOLATION}",
+    "Basket.Empty": "Your basket is empty",
+    "Basket.Empty.Text": " Your basket is empty.{$LINE_BREAK} Need inspiration?",
+    "Basket.Items": "{VAR_PLURAL, plural, =1 {item} other {items}}",
+    "Basket.MyBasket": "My basket",
+    "Basket.Payment": "Payment",
+    "Catalog.Empty": " Sorry, our stock is empty ! ",
+    "Catalog.Title": "Catalog",
+    "FormError.CreditCard": "Must be a valid number (ie. 123-456)",
+    "FormError.Required": "Required field",
+    "FormField.Address": "Address",
+    "FormField.CreditCard": "Credit card number",
+    "FormField.Name": "Name",
+    "Logo.ImageTitle": "Website logo",
+    "Page.NotFound": "Sorry, the page you are looking for cannot be found.",
+    "ProductDetails.Title": "Product details",
+    "ProductDetails.Description": "Description",
+    "ProductDetails.Stock": "Available stock",
+    "ProductDetails.Price": "Price",
+    "Response.ErrorOccured": "😱 Sorry, an error occurred.",
+    "Response.OrderConfirmed": "🚀 Thank you for your order (ref. {$orderNumber}).",
+    "Response.UnableToAccessBasket": "😖 Sorry, unable to access the basket.",
+    "Response.UnableToAccessCatalog": "😲 Sorry, unable to access the catalog.",
+    "Response.UnableToFindProduct": "😳 Sorry, unable to find this product.",
+    "Welcome": "Welcome to Zenika Ecommerce"
+  }
+}

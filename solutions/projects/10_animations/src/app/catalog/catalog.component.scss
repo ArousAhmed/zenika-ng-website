@@ -1,0 +1,7 @@
+.app-catalog-list {
+  perspective: 1000px;
+
+  &__item {
+    transform-style: preserve-3d;
+  }
+}

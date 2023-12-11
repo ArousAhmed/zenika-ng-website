@@ -1,0 +1,3 @@
+<div @disappear *ngFor="let alert of alerts$ | async" class="alert alert-{{ alert.type }} overflow-hidden" role="alert">
+  {{ alert.content }}
+</div>
