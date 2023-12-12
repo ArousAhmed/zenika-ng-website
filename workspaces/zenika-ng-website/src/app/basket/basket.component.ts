@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Customer } from '../customer/customer.types';
-import { BasketService } from './basket.service'
+import { BasketService } from './basket.service';
 
 @Component({
   selector: 'app-basket',
@@ -14,11 +14,11 @@ export class BasketComponent implements OnInit {
 
   private router = inject(Router);
 
-  protected get basketItems() {
+  protected get items() {
     return this.basketService.items;
   }
 
-  protected get basketTotal() {
+  protected get total() {
     return this.basketService.total;
   }
 
