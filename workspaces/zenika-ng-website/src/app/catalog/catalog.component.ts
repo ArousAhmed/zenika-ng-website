@@ -1,32 +1,34 @@
-import { Component, Inject } from '@angular/core';
-import { BasketItem } from '../basket/basket.types';
+import { Component, inject,Inject } from '@angular/core';
 import { Product } from '../product/product.types';
 import { ApiService } from '../shared/services/api.service';
+import { BasketService } from '../basket/basket.service';
 
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
 })
 export class CatalogComponent {
+  private basketService = inject(BasketService);
+
   protected products: Product[] = [];
 
-  private basketItems: BasketItem[] = [];
+  // private basketItems: BasketItem[] = [];
 
   constructor(
     @Inject('WELCOME_MSG') protected welcomeMsg: string,
     private apiService: ApiService,
   ) {
-    this.apiService.getProducts().subscribe((products) => (this.products = products));
-    this.apiService.getBasket().subscribe((basketItems) => (this.basketItems = basketItems));
+    this.basketService.fetch().subscribe();
+    // this.apiService.getProducts().subscribe((products) => (this.products = products));
+    // this.apiService.getBasket().subscribe((basketItems) => (this.basketItems = basketItems));
   }
 
   protected get basketTotal(): number {
-    return this.basketItems.reduce((total: number, { price }) => total + price, 0);
+    return this.basketService.total;
   }
 
   protected addToBasket(product: Product): void {
-    this.apiService.addToBasket(product.id).subscribe((basketItem) => {
-      this.basketItems.push(basketItem);
+    this.basketService.addItem(product.id).subscribe(() => {
       this.decreaseStock(product);
     });
   }
