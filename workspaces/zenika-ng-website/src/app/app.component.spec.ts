@@ -9,10 +9,9 @@ describe('AppComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent],
-      imports: [RouterTestingModule],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    });
+    imports: [RouterTestingModule, AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+});
 
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;

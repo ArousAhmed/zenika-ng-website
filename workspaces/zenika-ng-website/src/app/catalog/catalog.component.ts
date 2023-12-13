@@ -4,9 +4,14 @@ import { WELCOME_MSG } from '../app.token';
 import { BasketService } from '../basket/basket.service';
 import { CatalogService } from './catalog.service';
 import { Product } from './product/product.types';
+import { ProductComponent } from './product/product.component';
+import { CurrencyPipe, NgFor, NgIf } from '@angular/common';
+import { RouterLinkWithHref } from '@angular/router';
 
 @Component({
   selector: 'app-catalog',
+  standalone: true,
+  imports: [ProductComponent, NgIf,CurrencyPipe,RouterLinkWithHref,NgFor],
   templateUrl: './catalog.component.html',
 })
 export class CatalogComponent implements OnInit {

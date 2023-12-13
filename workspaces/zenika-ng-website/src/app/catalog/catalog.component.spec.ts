@@ -14,24 +14,23 @@ describe('CatalogComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CatalogComponent],
-      imports: [RouterTestingModule],
-      providers: [
+    imports: [RouterTestingModule, CatalogComponent],
+    providers: [
         {
-          provide: CatalogService,
-          useValue: MockCatalogService,
+            provide: CatalogService,
+            useValue: MockCatalogService,
         },
         {
-          provide: BasketService,
-          useValue: MockBasketService,
+            provide: BasketService,
+            useValue: MockBasketService,
         },
         {
-          provide: WELCOME_MSG,
-          useValue: 'Welcome to unit testing',
+            provide: WELCOME_MSG,
+            useValue: 'Welcome to unit testing',
         },
-      ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    });
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+});
 
     fixture = TestBed.createComponent(CatalogComponent);
     component = fixture.componentInstance;

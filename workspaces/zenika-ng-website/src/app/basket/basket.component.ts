@@ -2,10 +2,17 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Customer } from '../customer/customer.types';
 import { BasketService } from './basket.service';
+import { NgFor, NgIf, CurrencyPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-basket',
-  templateUrl: './basket.component.html',
+    selector: 'app-basket',
+    templateUrl: './basket.component.html',
+    standalone: true,
+    imports: [
+        NgFor,
+        NgIf,
+        CurrencyPipe,
+    ],
 })
 export class BasketComponent implements OnInit {
   protected customer: Customer = { name: '', address: '', creditCard: '' };

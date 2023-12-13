@@ -10,15 +10,14 @@ describe('MenuComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MenuComponent],
-      imports: [RouterTestingModule],
-      providers: [
+    imports: [RouterTestingModule, MenuComponent],
+    providers: [
         {
-          provide: ApiService,
-          useValue: MockApiService,
+            provide: ApiService,
+            useValue: MockApiService,
         },
-      ],
-    });
+    ],
+});
 
     fixture = TestBed.createComponent(MenuComponent);
     component = fixture.componentInstance;

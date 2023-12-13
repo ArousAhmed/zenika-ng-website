@@ -10,15 +10,14 @@ describe('BasketComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [BasketComponent],
-      imports: [RouterTestingModule],
-      providers: [
+    imports: [RouterTestingModule, BasketComponent],
+    providers: [
         {
-          provide: BasketService,
-          useValue: MockBasketService,
+            provide: BasketService,
+            useValue: MockBasketService,
         },
-      ],
-    });
+    ],
+});
 
     fixture = TestBed.createComponent(BasketComponent);
     component = fixture.componentInstance;
